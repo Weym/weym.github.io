@@ -1,6 +1,115 @@
+:root {
+    --color-text-primary: #333;
+    --color-text-secondary: #aaa;
+    --primary-color: #1e90ff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-    height: 100vh;
-    width: 100vw;
-    background-color: black;
-    color: white;
+    height: 300vh;
+    background-color: white;
+    color: black;
+    margin: 0 3vw;
+    height: 500vh;
+    margin: 0;
+}
+
+body.dark-mode {
+    --color-text-primary: white;
+    --color-text-secondary: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Montserrat", sans-serif;
+    color: var(--color-text-primary);
+}
+
+a {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-size: 120px;
+}
+
+
+
+/* HERO */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 180px;
+    height: calc(100vh - 180px);
+}
+
+.hero__title {
+    font-size: 8vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 3rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.hero__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.hero__info {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.hero__description {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-family: 'Poppins';
+}
+
+.hero__cta {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    border: 2px solid var(--color-text-primary);
+    padding: 12px 50px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero__cta:hover {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.hero__visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-right: 300px;
+}
+
+.hero__image {
+    max-width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+    /* Efeito preto e branco */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }

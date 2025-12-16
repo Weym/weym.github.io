@@ -12,7 +12,9 @@
 
 body {
     height: 300vh;
-    background-color: white;
+    background-color: var(--color-text-secondary);
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
     color: black;
     margin: 0 3vw;
     height: 500vh;
@@ -375,4 +377,157 @@ h1 {
 .line:nth-child(2) {
     margin-left: 0;
     /* Centralizado */
+}
+
+/* WHAT-I-DO */
+/* --- SECTION: WHAT I DO --- */
+.what-i-do {
+    background-color: var(--color-text-secondary);
+    color: var(--color-text-primary);
+    padding: 120px 0;
+    /* Increased padding for dramatic spacing */
+    width: 100%;
+}
+
+.what-i-do__content {
+    display: flex;
+    flex-direction: column;
+    /* Removed gap:60px to control spacing manually between elements */
+}
+
+.what-i-do__top
+
+/* --- 1. Title Area --- */
+.what-i-do__header {
+    width: 100%;
+}
+
+.what-i-do__title {
+    font-size: 6vw;
+    /* Responsive large font */
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    color: var(--color-text-primary);
+    max-width: 50%;
+    /* Ensures title stays on left */
+}
+
+/* --- 2. Text Area (Offset) --- */
+.what-i-do__intro-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 4rem;
+    /* Pushes text DOWN relative to title (The vertical offset) */
+    margin-bottom: 6rem;
+    /* Space before the skills line */
+}
+
+.what-i-do__intro-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-primary);
+    width: 100%;
+    max-width: 500px;
+    /* Limits width of the paragraph itself */
+    text-align: left;
+    /* Keeps text inside the block left-aligned */
+    grid-column-start: 7;
+    grid-column-end: 10;
+}
+
+/* --- 3. Skills Section --- */
+.what-i-do__skills-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 60px;
+}
+
+/* 
+@media (min-width: 1024px) {
+    .what-i-do__skills-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        width: 100%; 
+        max-width: 100%;
+        margin-left: auto; 
+    }
+    
+} */
+
+.skill-set {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    border-top: 1px solid #333;
+    padding-top: 16px;
+    position: sticky;
+    top: 20vh;
+    background-color: var(--color-text-secondary);
+    margin-bottom: 50vh;
+}
+
+/* TODO: Tem algum jeito de colocar isso em variável e deixar automático? */
+.skill-set:nth-of-type(1) {
+    top: 160px;
+    margin-bottom: 365px;
+}
+
+.skill-set:nth-of-type(2) {
+    top: 240px;
+    margin-bottom: 300px;
+}
+
+.skill-set:nth-of-type(3) {
+    top: 320px;
+}
+
+.skill-set:last-child {
+    margin-bottom: 0;
+}
+
+
+.skill-set__heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.skill-set__number {
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.skill-set__content {
+    grid-column-start: 7;
+    grid-column-end: 13;
+}
+
+.skill-set__description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 450px;
+}
+
+.skill-set__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-set__item {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
 }

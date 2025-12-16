@@ -353,9 +353,7 @@ h1 {
     flex-direction: column;
 }
 
-.what-i-do__top
-
-.what-i-do__header {
+.what-i-do__top .what-i-do__header {
     width: 100%;
 }
 
@@ -533,8 +531,7 @@ h1 {
     display: block;
 }
 
-.selected-works__item--video {
-}
+.selected-works__item--video {}
 
 .selected-works__number {
     grid-column: 1 / 5;
@@ -592,7 +589,175 @@ h1 {
 }
 
 
+/* --- BLOG --- */
+.blog {
+    background-color: var(--color-text-secondary);
+    color: var(--color-text-primary);
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    overflow: hidden;
+}
 
+/* 1. Header */
+.blog__header {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 4rem;
+    align-items: flex-start;
+}
+
+.blog__title {
+    grid-column: 1 / 7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+}
+
+.blog__description {
+    grid-column: 8 / 13;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    opacity: 0.8;
+}
+
+/* 2. Slider Container (A Janela) */
+.blog__slider-container {
+    width: 100%;
+    overflow-x: auto;
+    /* Permite rolagem horizontal */
+    overflow-y: hidden;
+    /* Trava rolagem vertical */
+    cursor: grab;
+    scroll-behavior: smooth;
+
+    /* Esconde a barra de rolagem */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    /* Impede seleção de texto ao arrastar */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.blog__slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Classe ativa quando arrasta (JS) */
+.blog__slider-container.active {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+/* Snap (Imã) quando solta */
+.blog__slider-container:not(.active) {
+    scroll-snap-type: x mandatory;
+}
+
+/* 3. Track (A Trilha - ONDE ESTAVA O PROBLEMA) */
+.blog__track {
+    display: flex;
+    /* CRUCIAL: Coloca itens lado a lado */
+    gap: 2rem;
+    width: max-content;
+    /* CRUCIAL: Força a largura ser a soma dos cards */
+    padding-right: 4rem;
+    /* Espaço extra no fim */
+}
+
+/* 4. Card */
+.blog__card {
+    width: 30vw;
+    /* Largura de cada card */
+    min-width: 350px;
+    flex-shrink: 0;
+    /* Garante que o card não encolha */
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 5. Imagem */
+.blog__image-wrapper {
+    width: 100%;
+    height: 400px;
+    margin: 0 0 1.5rem 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+}
+
+.blog__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+
+    /* Impede conflito de arrastar imagem */
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.blog__card:hover .blog__image {
+    transform: scale(1.05);
+}
+
+/* 6. Textos e Links */
+.blog__content {
+    padding-right: 1rem;
+}
+
+.blog__card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 0.8rem 0;
+}
+
+.blog__link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.blog__link:hover {
+    color: #888;
+}
+
+.blog__card-excerpt {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.7;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog__read-more {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    margin-top: 1rem;
+    color: inherit;
+    cursor: pointer;
+}
+
+.blog__read-more:hover {
+    color: #888;
+}
 
 
 

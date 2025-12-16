@@ -154,3 +154,225 @@ h1 {
     /* Efeito preto e branco */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
+/* --- NAVBAR (Container Global) --- */
+/* Ocupa a tela toda para permitir posicionar logo na esq e menu na dir */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Permite clicar 'através' da área vazia */
+}
+
+/* --- LOGO (Canto Superior Esquerdo) --- */
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-weight: 700;
+    font-size: 2rem;
+    /* Tamanho grande para o 'W' */
+    color: #333;
+    pointer-events: auto;
+    /* Reativa cliques na logo */
+    z-index: 100;
+}
+
+/* --- MENU CIRCULAR (A Lista UL) --- */
+.circle-menu {
+    position: absolute;
+    top: -250px;
+    /* Puxa para cima */
+    right: -250px;
+    /* Puxa para a direita */
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Rotação de todo o conjunto */
+    list-style: none;
+    pointer-events: auto;
+    /* Reativa cliques no menu */
+}
+
+/* --- ITENS DA LISTA (LI) --- */
+.navbar__item {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* Prevents clicking invisible links */
+    transform: scale(0.8);
+    /* Optional: slight zoom effect */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* O LI em si não deve bloquear, apenas o link dentro */
+    pointer-events: none;
+}
+
+/* --- LINKS (OS ANÉIS) --- */
+.ring {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Texto na parte de baixo */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #FFD700;
+    /* Dourado */
+    border: 1px solid #333;
+    /* Linha preta fina */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    pointer-events: auto;
+}
+
+.ring:hover {
+    filter: brightness(1.1);
+}
+
+/* --- TAMANHOS E CORES (Baseado na ordem dos LIs) --- */
+/* Usamos nth-child na LI para pegar a ordem correta */
+
+/* 1. Home (O menor, topo da pilha) */
+.navbar__item:nth-child(1) {
+    z-index: 6;
+}
+
+.navbar__item:nth-child(1) .ring {
+    width: 150px;
+    height: 150px;
+    background-color: #E05E5E;
+    padding-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+/* 2. Myself */
+.navbar__item:nth-child(2) {
+    z-index: 5;
+}
+
+.navbar__item:nth-child(2) .ring {
+    width: 230px;
+    height: 230px;
+    background-color: #E05E5E;
+    z-index: 5;
+    padding-bottom: 11px;
+    font-size: 1rem;
+}
+
+/* 3. What I do */
+.navbar__item:nth-child(3) {
+    z-index: 4;
+}
+
+.navbar__item:nth-child(3) .ring {
+    width: 310px;
+    height: 310px;
+    background-color: #E05E5E;
+    z-index: 4;
+    padding-bottom: 12px;
+    font-size: 1rem;
+}
+
+/* 4. Projects */
+.navbar__item:nth-child(4) {
+    z-index: 3;
+}
+
+.navbar__item:nth-child(4) .ring {
+    width: 390px;
+    height: 390px;
+    background-color: #E05E5E;
+    z-index: 3;
+    padding-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* 5. Blog */
+.navbar__item:nth-child(5) {
+    z-index: 2;
+}
+
+.navbar__item:nth-child(5) .ring {
+    width: 470px;
+    height: 470px;
+    background-color: #E05E5E;
+    z-index: 2;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* 6. Contact (O maior, fundo da pilha) */
+.navbar__item:nth-child(6) {
+    z-index: 1;
+}
+
+.navbar__item:nth-child(6) .ring {
+    width: 550px;
+    height: 550px;
+    background-color: #9E2A2F;
+    /* Vermelho escuro */
+    z-index: 1;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* --- ÍCONE CENTRAL (Dentro da UL) --- */
+.center-circle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: #E05E5E;
+    border-radius: 50%;
+    z-index: 10;
+    /* Acima de todos os anéis */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    pointer-events: auto;
+    /* Se quiser que seja clicável */
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+
+}
+
+.circle-menu.menu-active .navbar__item {
+    opacity: 1;
+    /* Re-enable clicking */
+    transform: scale(1);
+    transform: rotate(39deg);
+}
+
+/* Spin the hamburger 720 degrees */
+.circle-menu.menu-active .center-circle {
+    transform: rotate(720deg);
+    border: 1px solid #333;
+}
+
+.line {
+    width: 30px;
+    height: 4px;
+    background-color: var(--color-text-primary);
+    border-radius: 2px;
+}
+
+/* Ajuste fino da segunda linha para ficar igual ao desenho original */
+.line:nth-child(2) {
+    margin-left: 0;
+    /* Centralizado */
+}

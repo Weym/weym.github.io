@@ -42,6 +42,47 @@ h1 {
 }
 
 
+/* HELPER CLASSES */
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.padding-y-6 {
+    padding: 0 6rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    z-index: 1;
+}
+
+.navbar__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 500;
+    transition: color 0.3s;
+    margin-left: 15px;
+}
+
+.navbar__link:hover {
+    color: #002F66;
+}
+
+.navbar__link--active {
+    border-bottom: 2px solid #004A99;
+}
 
 /* HERO */
 .hero {

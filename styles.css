@@ -3,6 +3,10 @@
     --color-text-secondary: #d0d0cd;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -57,6 +61,34 @@ h1,
 .muted-text {
     opacity: 0.6;
     color: var(--color-text-primary);
+}
+
+.image-overlay {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.image-overlay img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    transition: background-color 0.3s ease;
+}
+
+.image-overlay:hover::after {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -256,8 +288,8 @@ h1,
     height: 230px;
     background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 25%);
     z-index: 5;
-    padding-bottom: 11px;
-    font-size: 1rem;
+    padding-bottom: 17px;
+    font-size: 0.9rem;
 }
 
 .navbar__item:nth-child(3) {
@@ -269,8 +301,8 @@ h1,
     height: 310px;
     background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 20%);
     z-index: 4;
-    padding-bottom: 12px;
-    font-size: 1rem;
+    padding-bottom: 14px;
+    font-size: 0.9rem;
 }
 
 .navbar__item:nth-child(4) {
@@ -282,8 +314,8 @@ h1,
     height: 390px;
     background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 15%);
     z-index: 3;
-    padding-bottom: 15px;
-    font-size: 1.1rem;
+    padding-bottom: 10px;
+    font-size: 1rem;
 }
 
 .navbar__item:nth-child(5) {
@@ -862,11 +894,11 @@ h1,
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .about__image-wrapper {
         height: 400px;
     }
-    
+
     .about__intro {
         font-size: 1.4rem;
     }
@@ -1447,6 +1479,7 @@ h1 {
         bottom: 5%;
         transform: rotate(-90deg);
     }
+
     .rotate-sidebar-right {
         transform: rotate(90deg) scaleY(-1) scaleX(-1);
         right: 50%;
@@ -1460,6 +1493,7 @@ h1 {
         bottom: 0;
         transform: rotate(-90deg);
     }
+
     .rotate-sidebar-right {
         transform: rotate(90deg) scaleY(-1) scaleX(-1);
         right: 50%;
@@ -1493,13 +1527,14 @@ h1 {
     }
 
     .hero {
-        
-    margin-top: 6rem;
+
+        margin-top: 6rem;
     }
 
     .rotate-sidebar-left {
         bottom: 3%;
     }
+
     .rotate-sidebar-right {
         bottom: -2%;
     }
@@ -1532,7 +1567,7 @@ h1 {
     .selected-works__header {
         column-gap: 40px;
     }
-    
+
     .skill-set:nth-of-type(1) {
         top: 243px;
         margin-bottom: 430px;
@@ -1544,8 +1579,8 @@ h1 {
     }
 
     .hero {
-        
-    margin-top: 6rem;
+
+        margin-top: 6rem;
     }
 }
 

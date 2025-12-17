@@ -1,7 +1,6 @@
 :root {
-    --color-text-primary: #333;
-    --color-text-secondary: #aaa;
-    --primary-color: #1e90ff;
+    --color-text-primary: #131313;
+    --color-text-secondary: #d0d0cd;
 }
 
 * {
@@ -11,18 +10,18 @@
 }
 
 body {
-    min-height: 100vh; 
+    min-height: 100vh;
     background-color: var(--color-text-secondary);
     font-family: 'Montserrat', sans-serif;
     position: relative;
     color: black;
-    margin: 0; 
+    margin: 0;
     overflow-x: hidden;
 }
 
 body.dark-mode {
-    --color-text-primary: white;
-    --color-text-secondary: black;
+    --color-text-primary: #d7d7cdc5;
+    --color-text-secondary: #131313;
 }
 
 h1,
@@ -38,9 +37,10 @@ a {
     font-family: "Montserrat", sans-serif;
 }
 
-h1, .hero__title {
+h1,
+.hero__title {
     /* Minimum 40px, Preferred 8vw, Max 120px */
-    font-size: clamp(2.5rem, 8vw, 7.5rem); 
+    font-size: clamp(2.5rem, 8vw, 7.5rem);
 }
 
 
@@ -52,6 +52,10 @@ h1, .hero__title {
 
 .padding-y-6 {
     padding: 0 6rem;
+}
+
+.muted-text {
+    opacity: 0.6
 }
 
 .navbar {
@@ -78,11 +82,19 @@ h1, .hero__title {
 }
 
 .navbar__link:hover {
-    color: #002F66;
+    color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 70%);
 }
 
 .navbar__link--active {
     border-bottom: 2px solid #004A99;
+}
+
+.navbar__item .navbar__link {
+    pointer-events: none;
+}
+
+.menu-active .navbar__item .navbar__link {
+    pointer-events: auto;
 }
 
 .hero {
@@ -136,8 +148,8 @@ h1, .hero__title {
 }
 
 .hero__cta:hover {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-text-primary);
+    color: var(--color-text-secondary);
 }
 
 .hero__visual {
@@ -185,6 +197,7 @@ h1, .hero__title {
     align-items: center;
     list-style: none;
     pointer-events: auto;
+    transition: 0.6s transform;
 }
 
 .navbar__item {
@@ -210,8 +223,7 @@ h1, .hero__title {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 4px;
-    color: #FFD700;
-    border: 1px solid #333;
+    color: var(--color-text-primary);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, filter 0.3s ease;
     pointer-events: auto;
@@ -229,7 +241,7 @@ h1, .hero__title {
 .navbar__item:nth-child(1) .ring {
     width: 150px;
     height: 150px;
-    background-color: #E05E5E;
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 30%);
     padding-bottom: 12px;
     font-size: 0.9rem;
 }
@@ -241,7 +253,7 @@ h1, .hero__title {
 .navbar__item:nth-child(2) .ring {
     width: 230px;
     height: 230px;
-    background-color: #E05E5E;
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 25%);
     z-index: 5;
     padding-bottom: 11px;
     font-size: 1rem;
@@ -254,7 +266,7 @@ h1, .hero__title {
 .navbar__item:nth-child(3) .ring {
     width: 310px;
     height: 310px;
-    background-color: #E05E5E;
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 20%);
     z-index: 4;
     padding-bottom: 12px;
     font-size: 1rem;
@@ -267,9 +279,9 @@ h1, .hero__title {
 .navbar__item:nth-child(4) .ring {
     width: 390px;
     height: 390px;
-    background-color: #E05E5E;
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 15%);
     z-index: 3;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     font-size: 1.1rem;
 }
 
@@ -280,7 +292,7 @@ h1, .hero__title {
 .navbar__item:nth-child(5) .ring {
     width: 470px;
     height: 470px;
-    background-color: #E05E5E;
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 10%);
     z-index: 2;
     padding-bottom: 10px;
     font-size: 1.1rem;
@@ -293,17 +305,21 @@ h1, .hero__title {
 .navbar__item:nth-child(6) .ring {
     width: 550px;
     height: 550px;
-    background-color: #9E2A2F;
+    /* Mistura a variável com 20% de preto */
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 5%);
     z-index: 1;
     padding-bottom: 10px;
     font-size: 1.2rem;
+}
+
+.circle-menu {
+    transform: rotate(-45deg);
 }
 
 .center-circle {
     position: absolute;
     width: 70px;
     height: 70px;
-    background-color: #E05E5E;
     border-radius: 50%;
     z-index: 10;
     display: flex;
@@ -316,18 +332,21 @@ h1, .hero__title {
     cursor: pointer;
     background: transparent;
     border: none;
-
+    transform: rotate(45deg);
 }
 
 .circle-menu.menu-active .navbar__item {
     opacity: 1;
     transform: scale(1);
+}
+
+.circle-menu.menu-active {
     transform: rotate(39deg);
 }
 
 .circle-menu.menu-active .center-circle {
     transform: rotate(720deg);
-    border: 1px solid #333;
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 35%);
 }
 
 .line {
@@ -372,6 +391,7 @@ h1, .hero__title {
     grid-template-columns: repeat(12, 1fr);
     margin-top: 4rem;
     margin-bottom: 6rem;
+    gap: 40px;
 }
 
 .what-i-do__intro-text {
@@ -380,9 +400,8 @@ h1, .hero__title {
     line-height: 1.7;
     color: var(--color-text-primary);
     width: 100%;
-    max-width: 500px;
     text-align: left;
-    grid-column-start: 7;
+    grid-column-start: 6;
     grid-column-end: 10;
 }
 
@@ -408,12 +427,12 @@ h1, .hero__title {
 
 .skill-set:nth-of-type(1) {
     top: 160px;
-    margin-bottom: 365px;
+    margin-bottom: 275px;
 }
 
 .skill-set:nth-of-type(2) {
     top: 240px;
-    margin-bottom: 300px;
+    margin-bottom: 215px;
 }
 
 .skill-set:nth-of-type(3) {
@@ -485,7 +504,7 @@ h1, .hero__title {
 .selected-works__title {
     grid-column: 1 / 7;
     font-family: 'Montserrat', sans-serif;
-    font-size: 5vw;
+    font-size: 3.2cqi;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1;
@@ -493,7 +512,8 @@ h1, .hero__title {
 }
 
 .selected-works__description {
-    grid-column: 8 / 13;
+    margin-top: 110px;
+    grid-column: 6 / 10;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
@@ -616,7 +636,9 @@ h1, .hero__title {
 }
 
 .blog__description {
-    grid-column: 8 / 13;
+    margin-top: 110px;
+    margin-bottom: 25px;
+    grid-column: 6 / 10;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     line-height: 1.6;
@@ -794,8 +816,14 @@ h1, .hero__title {
     margin-bottom: -20px;
 }
 
+.sidebar__link svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
 .sidebar--right .sidebar__email {
     margin-bottom: -15px;
+    font-size: 1rem;
 }
 
 .sidebar__link {
@@ -807,6 +835,7 @@ h1, .hero__title {
 .sidebar__link:hover {
     transform: translateY(-3px);
 }
+
 
 .sidebar__email {
     writing-mode: vertical-rl;
@@ -823,6 +852,18 @@ h1, .hero__title {
     background-color: var(--color-text-primary);
 }
 
+.sidebar__link.invert {
+    color: var(--color-text-secondary);
+}
+
+.sidebar__line.invert {
+    background-color: var(--color-text-secondary);
+}
+
+.sidebar__email.invert {
+    color: var(--color-text-secondary);
+}
+
 /* --- CONTACT / FOOTER --- */
 .contact-section {
     background-color: var(--color-text-secondary);
@@ -833,7 +874,8 @@ h1, .hero__title {
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 60vh;
+    min-height: 45vh;
+    max-height: 60vh;
 }
 
 .contact__container {
@@ -888,10 +930,6 @@ h1, .hero__title {
 .contact__footer-note p {
     margin: 0;
 }
-
-
-
-
 
 
 
@@ -1028,7 +1066,7 @@ section div {
 
 .rotate-sidebar-left {
     left: 49%;
-    bottom: 12%;
+    bottom: 0;
     transform: rotate(-90deg);
 }
 
@@ -1043,7 +1081,7 @@ section div {
 .rotate-sidebar-right {
     transform: rotate(90deg) scaleY(-1) scaleX(-1);
     right: 50%;
-    bottom: 6%;
+    bottom: -1%;
 }
 
 .rotate-sidebar-right .sidebar__line {
@@ -1098,24 +1136,28 @@ h1 {
 
 
 @media (max-width: 1024px) {
-    
+
     /* --- GLOBAL MOBILE ADJUSTMENTS --- */
     body {
-        margin: 0 5vw; /* Give some breathing room on edges */
+        margin: 0 5vw;
+        /* Give some breathing room on edges */
     }
 
     .padding-y-6 {
-        padding: 0; /* Requested removal */
+        padding: 0;
+        /* Requested removal */
     }
 
     .sidebar {
-        display: none; /* Requested removal */
+        display: none;
+        /* Requested removal */
     }
 
     /* --- HERO SECTION --- */
     .hero {
         margin-top: 100px;
-        height: auto; /* Allow growth */
+        height: auto;
+        /* Allow growth */
         padding-bottom: 60px;
     }
 
@@ -1130,6 +1172,7 @@ h1 {
     .hero__content {
         display: flex;
     }
+
     /* 2. Image */
     .hero__visual {
         order: 0;
@@ -1140,9 +1183,10 @@ h1 {
     .hero__info {
         order: 1;
     }
-    
+
     .hero__image {
-        max-width: 80%; /* Don't take full width so it looks "artistic" */
+        max-width: 80%;
+        /* Don't take full width so it looks "artistic" */
     }
 
     /* 3. Description */
@@ -1154,7 +1198,8 @@ h1 {
 
     /* 4. Button */
     .hero__cta {
-        width: 100%; /* Full width button on mobile is better UX */
+        width: 100%;
+        /* Full width button on mobile is better UX */
         text-align: center;
     }
 
@@ -1188,7 +1233,8 @@ h1 {
     .skill-set {
         display: flex;
         flex-direction: column;
-        position: static; /* Disable sticky on mobile */
+        position: static;
+        /* Disable sticky on mobile */
         margin-bottom: 60px;
         top: auto;
         border-top: none;
@@ -1212,18 +1258,15 @@ h1 {
        Assuming HTML is: <div number></div> <div content><h2 heading>...</div> 
        Since grid is removed, we use flex on the wrapper? 
        Actually, best approach for your grid structure: */
-    
+
     .skill-set {
-        /* Turn the grid row into a flex column container */
-        display: flex; 
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
-    
-    /* Visually group Number and Heading if possible, 
-       but since they are siblings in Grid, we format the number to look like a label */
+
     .skill-set__number {
-        font-size: 3rem; /* Make it distinct */
+        font-size: 3rem;
         color: var(--color-text-primary);
         line-height: 1;
     }
@@ -1249,7 +1292,7 @@ h1 {
         display: flex;
         flex-direction: column;
         margin-bottom: 80px;
-        position: relative; /* Context for absolute positioning */
+        position: relative;
     }
 
     .selected-works__content {
@@ -1259,16 +1302,15 @@ h1 {
     /* The Overlay Magic */
     .selected-works__number {
         position: absolute;
-        top: -30px; /* Pull it slightly above */
+        top: -30px;
         left: 10px;
         z-index: 2;
-        font-size: 4rem; /* Smaller as requested */
-        color: white; /* Contrast against image */
-        text-shadow: 2px 2px 0px #000; /* Outline for readability */
-        pointer-events: none; /* Let clicks pass through to image */
+        font-size: 4rem;
+        color: white;
+        text-shadow: 2px 2px 0px #000;
+        pointer-events: none;
     }
-    
-    /* Ensure image wrapper is below the number */
+
     .selected-works__image-wrapper {
         z-index: 1;
         border-radius: 8px;
@@ -1281,18 +1323,17 @@ h1 {
 
     /* --- BLOG SLIDER (PEEK EFFECT) --- */
     .blog__track {
-        gap: 15px; /* Smaller gap */
+        gap: 15px;
         padding-right: 20px;
     }
 
     .blog__card {
-        /* Card takes 85% of screen, leaving 15% to "peek" the next card */
-        width: 85vw; 
+        width: 85vw;
         min-width: unset;
     }
 
     .blog__image-wrapper {
-        height: 250px; /* Reduced height for mobile */
+        height: 250px;
     }
 
     /* --- FOOTER --- */
@@ -1300,42 +1341,120 @@ h1 {
         padding: 60px 20px;
         min-height: auto;
     }
-    
+
     .contact__title {
         font-size: 10vw;
     }
 }
 
+@media (max-width: 1920px) {
+    .rotate-sidebar-left {
+        left: 49%;
+        bottom: 5%;
+        transform: rotate(-90deg);
+    }
+    .rotate-sidebar-right {
+        transform: rotate(90deg) scaleY(-1) scaleX(-1);
+        right: 50%;
+        bottom: -2%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .rotate-sidebar-left {
+        left: 49%;
+        bottom: 0;
+        transform: rotate(-90deg);
+    }
+    .rotate-sidebar-right {
+        transform: rotate(90deg) scaleY(-1) scaleX(-1);
+        right: 50%;
+        bottom: -1%;
+    }
+
+    .contact__btn {
+        margin-bottom: 2rem;
+    }
+}
+
 @media (min-width: 2000px) {
-    /* Scale the "Root" font size, this scales all 'rem' values automatically */
-    html {
-        font-size: 24px; 
-    }
-
-    /* Allow the layout to stretch wider */
-    body {
-        max-width: 2400px;
-        margin: 0 auto;
-    }
-
-    /* Fix hero positioning for massive vertical space */
     .hero {
-        margin-top: 7vh;
         justify-content: center;
     }
 
     /* Increase visual impact of images */
-    .selected-works__item, 
-    .blog__card, 
+    .selected-works__item,
+    .blog__card,
     .hero__image {
-        transform: scale(1.1); /* Slight zoom to fill space */
+        transform: scale(1.1);
+        /* Slight zoom to fill space */
         transform-origin: center;
     }
-    
+
     /* Ensure grid gaps are proportional */
-    .what-i-do__intro-wrapper, 
-    .skill-set, 
+    .what-i-do__intro-wrapper,
+    .skill-set,
     .selected-works__header {
         column-gap: 40px;
     }
+
+    .hero {
+        
+    margin-top: 6rem;
+    }
+
+    .rotate-sidebar-left {
+        bottom: 3%;
+    }
+    .rotate-sidebar-right {
+        bottom: -2%;
+    }
+}
+
+@media (min-width: 3000px) {
+
+    /* Scale the "Root" font size, this scales all 'rem' values automatically */
+    html {
+        font-size: 24px;
+    }
+
+    /* Fix hero positioning for massive vertical space */
+    .hero {
+        justify-content: center;
+    }
+
+    /* Increase visual impact of images */
+    .selected-works__item,
+    .blog__card,
+    .hero__image {
+        transform: scale(1.1);
+        /* Slight zoom to fill space */
+        transform-origin: center;
+    }
+
+    /* Ensure grid gaps are proportional */
+    .what-i-do__intro-wrapper,
+    .skill-set,
+    .selected-works__header {
+        column-gap: 40px;
+    }
+    
+    .skill-set:nth-of-type(1) {
+        top: 243px;
+        margin-bottom: 430px;
+    }
+
+    .skill-set:nth-of-type(2) {
+        top: 360px;
+        margin-bottom: 273px;
+    }
+
+    .hero {
+        
+    margin-top: 6rem;
+    }
+}
+
+.hero__title {
+    margin-bottom: 7rem;
 }

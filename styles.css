@@ -898,8 +898,192 @@ h1 {
 
 
 
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+    .header {
+        padding: 1.5rem;
+    }
+
+    .hero__title {
+        font-size: 12vw;
+        margin-top: 2rem;
+        white-space: normal;
+    }
+
+    .hero__content {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        padding: 0;
+    }
+
+    .hero__info {
+        padding-right: 0;
+    }
+
+    .hero__description {
+        font-size: 1.1rem;
+    }
+
+    .sidebar {
+        display: none;
+    }
 
 
+    .what-i-do {
+        padding: 60px 0;
+    }
+
+    .what-i-do__title {
+        font-size: 3.5rem;
+        max-width: 100%;
+    }
+
+    .what-i-do__intro-wrapper {
+        justify-content: flex-start;
+        /* Stack naturally on mobile */
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .what-i-do__intro-text {
+        max-width: 100%;
+    }
+
+    .what-i-do__skills-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+
+    .selected-works__header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .selected-works__description {
+        margin-left: 0;
+        max-width: 100%;
+    }
+
+    .selected-works__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 6rem;
+    }
+
+    .selected-works__number {
+        font-size: 6rem;
+        /* Reduz tamanho no mobile */
+    }
+
+    .selected-works__content {
+        width: 100%;
+    }
+
+    .blog__header {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .blog__card {
+        width: 45vw;
+        min-width: 280px;
+    }
+
+    .blog__image-wrapper {
+        height: 300px;
+    }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .contact__title {
+        font-size: 2.5rem;
+    }
+
+    .contact-section {
+        padding: 80px 20px 40px;
+    }
+
+    .blog__card {
+        width: 85vw;
+    }
+}
+
+
+
+
+/* TEMP */
+body {
+    transition: background-color 1s ease, color 5s ease;
+}
+
+section,
+section div {
+    transition: background-color 1s ease, color 5s ease;
+}
+
+.rotate-sidebar-left {
+    left: 49%;
+    bottom: 12%;
+    transform: rotate(-90deg);
+}
+
+.rotate-sidebar-left .sidebar__link {
+    transform: rotate(90deg);
+}
+
+.rotate-sidebar-left .sidebar__line {
+    display: none;
+}
+
+.rotate-sidebar-right {
+    transform: rotate(90deg) scaleY(-1) scaleX(-1);
+    right: 50%;
+    bottom: 6%;
+}
+
+.rotate-sidebar-right .sidebar__line {
+    display: none;
+}
+
+aside {
+    transition: all 2s;
+}
+
+@keyframes rpgFloat {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.contact__btn {
+    animation: rpgFloat 3s ease-in-out infinite;
+
+    will-change: transform;
+}
+
+.contact__btn:active {
+    animation-play-state: paused;
+}
+
+.contact__btn:hover {
+    animation-play-state: paused;
+    transform: translateY(-5px);
+}
 
 
 #projects {

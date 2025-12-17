@@ -1,5 +1,6 @@
-feather.replace();
-
+/* =========================================
+   MENU TOGGLE LOGIC
+   ========================================= */
 const toggleButton = document.querySelector('.center-circle');
 const menuList = document.querySelector('.circle-menu');
 
@@ -8,53 +9,35 @@ toggleButton.addEventListener('click', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // FOOTER
-    // 1. Tenta encontrar os elementos
+
+    /* =========================================
+       FOOTER ANIMATION (SIDEBAR ROTATION)
+       ========================================= */
     const footer = document.querySelector('.footer');
     const sidebarLeft = document.querySelector('.sidebar--left');
     const sidebarRight = document.querySelector('.sidebar--right');
 
-    // DEBUG: Verifica se achou os elementos
-    if (!footer) {
-        console.error("ERRO: Não encontrei nenhum elemento com a classe '.footer'");
-        return;
-    }
-    console.log("Sistema pronto: Footer e Sidebars encontrados.");
-
-    // 2. Configura o Observador
     const footerObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log("ENTROU: O footer apareceu na tela!");
-
-                console.log(sidebarLeft)
                 sidebarLeft.classList.add('rotate-sidebar-left');
                 sidebarRight.classList.add('rotate-sidebar-right');
-                console.log(sidebarLeft)
-                // Adiciona classe para esconder sidebars
-
-                // Adiciona classe para animar footer
                 footer.classList.add('animate-in');
-
             } else {
-                console.log("SAIU: O footer saiu da tela.");
-
-                // Remove as classes (reseta o estado)
                 sidebarLeft.classList.remove('rotate-sidebar-left');
                 sidebarRight.classList.remove('rotate-sidebar-right');
                 footer.classList.remove('animate-in');
             }
         });
     }, {
-        // Ajuste: threshold menor para garantir que detecte logo que uma pontinha apareça
         threshold: 0.5
     });
 
-    footerObserver.observe(footer);
+    if (footer) footerObserver.observe(footer);
 
-
-    // --- Lógica do Slider de Blog (Drag & Scroll) ---
-    // TODO: add snap-in-place
+    /* =========================================
+       BLOG SLIDER (DRAG TO SCROLL)
+       ========================================= */
     const slider = document.querySelector('.blog__slider-container');
     let isDown = false;
     let startX;
@@ -64,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         slider.addEventListener('mousedown', (e) => {
             isDown = true;
             slider.classList.add('active');
-
             startX = e.pageX - slider.offsetLeft;
             scrollLeft = slider.scrollLeft;
         });
@@ -86,9 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-
-
-    // Seleciona todas as sections que têm o atributo data-theme
+    /* =========================================
+       THEME SWITCHING (DARK/LIGHT MODE)
+       ========================================= */
     const sections = document.querySelectorAll("section[data-theme]");
 
     const observerOptions = {
@@ -100,13 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log("Sessão ativa:", entry.target.id); // Para debug no F12
-
                 const theme = entry.target.getAttribute("data-theme");
 
                 if (theme === "dark") {
                     document.body.classList.add("dark-mode");
-
                 } else {
                     document.body.classList.remove("dark-mode");
                 }

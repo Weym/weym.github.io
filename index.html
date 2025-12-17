@@ -52,7 +52,23 @@
                 </article>
 
                 <figure class="hero__visual">
-                    <img src="assets/map.jpg" alt="Mapa mundi na parede" class="hero__image">
+                    <picture>
+                        <source type="image/webp" srcset="
+                assets/map-800.webp 800w,
+                assets/map-1200.webp 1200w,
+                assets/map-1920.webp 1920w,
+                assets/map-3200.webp 3200w" sizes="(max-width: 1024px) 80vw, 50vw">
+
+                        <source type="image/jpeg" srcset="
+                assets/map-800.jpg 800w,
+                assets/map-1200.jpg 1200w,
+                assets/map-1920.jpg 1920w,
+                assets/map-3200.jpg 3200w
+            " sizes="(max-width: 1024px) 80vw, 50vw">
+
+                        <img src="assets/map-1920.jpg" alt="Mapa mundi na parede" width="1920" height="1255"
+                            loading="lazy" decoding="async" class="hero__image">
+                    </picture>
                 </figure>
             </div>
         </section>
@@ -68,9 +84,7 @@
                     <p class="what-i-do__intro-text">
                         Gravida integer cras non blandit sagittis placerat sagittis mi. Nisi justo et integer est aenean
                         pharetra condimentum dui malesuada mi netus congue. Non habitasse tempor facilisi id feugiat
-                        dignissim. Natoque id praesent habitasse neque aenean ipsum facilisi aliquet cum viverra nisl
-                        proin? Molestie ut leo feugiat senectus nam magna metus nisi. Pharetra massa duis felis
-                        sollicitudin adipiscing blandit eleifend metus justo.
+                        dignissim. Natoque id praesent habitasse neque aenean ipsum facilisi.
                     </p>
                 </div>
 
@@ -120,14 +134,14 @@
                         <div class="skill-set__content">
                             <h3 class="skill-set__heading">AI - Artificial Intelligence</h3>
                             <p class="skill-set__description">
-                                I design and build AI-powered products that connect large language models to real data,
-                                systems, and business workflows. My focus is on secure, scalable, and user-centered
-                                solutions, where AI acts as an active agent — not just a tool
+                                I am <span class="muted-text">learning to</span> design and build AI-powered products
+                                that connect large language models to real data,
+                                systems, and business workflows. Solutions where AI acts as an active agent — not just a
+                                tool
                             </p>
                             <ul class="skill-set__list">
                                 <li class="skill-set__item">LLMs & Prompt Engineering</li>
                                 <li class="skill-set__item">RAG, AI Agents, MCP</li>
-                                <li class="skill-set__item">OpenAI, Hugging Face, n8n</li>
                                 <li class="skill-set__item">OpenAI, Hugging Face, n8n</li>
                                 <li class="skill-set__item">Security, Data Privacy, Web Application Integration</li>
                             </ul>
@@ -137,15 +151,15 @@
             </div>
         </section>
 
-        <section class="selected-works padding-y-6" id="selected-works" data-theme="light">
-            <div class="padding-y-4">
+        <section class="selected-works padding-y-6" id="selected-works" data-theme="dark">
+            <div class="padding-y-6">
+                
                 <header class="selected-works__header">
                     <h2 class="selected-works__title">SELECTED WORKS</h2>
-                    <p class="selected-works__description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus risus id orci lacinia
-                        ornare.
-                        Vestibulum sed pellentesque libero, ut fermentum lorem.
-                    </p>
+                    <div class="selected-works__description">
+                        <span class="muted-text">(Projects)</span> 
+                        <p>Purpose-driven digital experiences that seamlessly blend usability and aesthetics into a refined whole.</p>
+                    </div>
                 </header>
 
                 <div class="selected-works__list">
@@ -155,11 +169,15 @@
 
                         <div class="selected-works__content">
                             <figure class="selected-works__image-wrapper">
-                                <video class="selected-works__video" autoplay loop muted playsinline
-                                    poster="assets/proj1.png">
-                                    <source src="assets/proj1.mp4" type="video/mp4">
-                                    <source src="assets/proj1.png" type="video/webm"> Your browser does not
-                                    support HTML5 video.
+                                <video class="selected-works__video" autoplay muted loop playsinline
+                                    poster="assets/video-poster.jpg" class="hero__video">
+                                    <source src="assets/video-mobile.webm" type="video/webm" media="(max-width: 768px)">
+                                    <source src="assets/video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+
+                                    <source src="assets/video-desktop.webm" type="video/webm">
+                                    <source src="assets/video-desktop.mp4" type="video/mp4">
+
+                                    <p>Your browser does not support the video tag.</p>
                                 </video>
                             </figure>
 
@@ -174,7 +192,7 @@
 
                         <div class="selected-works__content">
                             <figure class="selected-works__image-wrapper">
-                                <img src="assets/portfolio.png" alt="Appointment Scheduler"
+                                <img src="assets/portfolio.jpg" alt="Appointment Scheduler"
                                     class="selected-works__image">
                             </figure>
 
@@ -189,7 +207,7 @@
 
                         <div class="selected-works__content">
                             <figure class="selected-works__image-wrapper">
-                                <img src="assets/greencare.png" alt="Green Care" class="selected-works__image">
+                                <img src="assets/greencare.jpg" alt="Green Care" class="selected-works__image">
                             </figure>
 
                             <div class="selected-works__info">
@@ -204,7 +222,7 @@
 
                         <div class="selected-works__content">
                             <figure class="selected-works__image-wrapper">
-                                <img src="assets/n8n.png" alt="Appointment Scheduler" class="selected-works__image">
+                                <img src="assets/n8n.jpg" alt="Appointment Scheduler" class="selected-works__image">
                             </figure>
 
                             <div class="selected-works__info">
@@ -218,7 +236,7 @@
             </div>
         </section>
 
-        <section class="blog padding-y-6" id="blog" data-theme="dark">
+        <section class="blog padding-y-6" id="blog" data-theme="light">
 
             <header class="blog__header">
                 <h2 class="blog__title">Blog Posts</h2>
@@ -317,7 +335,7 @@
         </aside>
     </main>
 
-    <footer id="contact" class="contact-section footer" data-theme="dark">
+    <footer id="contact" class="contact-section footer" data-theme="light">
         <div class="contact__container">
 
             <h2 class="contact__title">Get In Touch</h2>

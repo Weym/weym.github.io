@@ -11,14 +11,13 @@
 }
 
 body {
-    height: 300vh;
+    min-height: 100vh; 
     background-color: var(--color-text-secondary);
     font-family: 'Montserrat', sans-serif;
     position: relative;
     color: black;
-    margin: 0 3vw;
-    height: 500vh;
-    margin: 0;
+    margin: 0; 
+    overflow-x: hidden;
 }
 
 body.dark-mode {
@@ -39,8 +38,9 @@ a {
     font-family: "Montserrat", sans-serif;
 }
 
-h1 {
-    font-size: 120px;
+h1, .hero__title {
+    /* Minimum 40px, Preferred 8vw, Max 120px */
+    font-size: clamp(2.5rem, 8vw, 7.5rem); 
 }
 
 
@@ -530,8 +530,6 @@ h1 {
     object-fit: cover;
     display: block;
 }
-
-.selected-works__item--video {}
 
 .selected-works__number {
     grid-column: 1 / 5;
@@ -1096,4 +1094,248 @@ p {
 
 h1 {
     color: var(--color-text-primary)
+}
+
+
+@media (max-width: 1024px) {
+    
+    /* --- GLOBAL MOBILE ADJUSTMENTS --- */
+    body {
+        margin: 0 5vw; /* Give some breathing room on edges */
+    }
+
+    .padding-y-6 {
+        padding: 0; /* Requested removal */
+    }
+
+    .sidebar {
+        display: none; /* Requested removal */
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+        margin-top: 100px;
+        height: auto; /* Allow growth */
+        padding-bottom: 60px;
+    }
+
+    .hero__content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* REORDERING LOGIC: H1 -> Img -> P -> Btn */
+
+
+    .hero__content {
+        display: flex;
+    }
+    /* 2. Image */
+    .hero__visual {
+        order: 0;
+        margin: 0 0 2rem 0;
+        width: 100%;
+    }
+
+    .hero__info {
+        order: 1;
+    }
+    
+    .hero__image {
+        max-width: 80%; /* Don't take full width so it looks "artistic" */
+    }
+
+    /* 3. Description */
+    .hero__description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+
+    /* 4. Button */
+    .hero__cta {
+        width: 100%; /* Full width button on mobile is better UX */
+        text-align: center;
+    }
+
+    /* --- WHAT I DO (SKILLS) --- */
+    .what-i-do {
+        padding: 60px 0;
+    }
+
+    .what-i-do__intro-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .what-i-do__title {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .what-i-do__intro-text {
+        max-width: 100%;
+    }
+
+
+    .skill-set:nth-of-type(1),
+    .skill-set:nth-of-type(2),
+    .skill-set:last-child {
+        margin-bottom: 60px;
+    }
+
+    /* Stack the skills */
+    .skill-set {
+        display: flex;
+        flex-direction: column;
+        position: static; /* Disable sticky on mobile */
+        margin-bottom: 60px;
+        top: auto;
+        border-top: none;
+    }
+
+    /* The "Magic": Putting Number beside Heading */
+    .skill-set__content {
+        /* We fake the layout by moving items */
+        flex-direction: column;
+    }
+
+    /* We need to pull the number out of its grid definition */
+    .skill-set__number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    /* If structure allows, this makes them sit side-by-side. 
+       Assuming HTML is: <div number></div> <div content><h2 heading>...</div> 
+       Since grid is removed, we use flex on the wrapper? 
+       Actually, best approach for your grid structure: */
+    
+    .skill-set {
+        /* Turn the grid row into a flex column container */
+        display: flex; 
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Visually group Number and Heading if possible, 
+       but since they are siblings in Grid, we format the number to look like a label */
+    .skill-set__number {
+        font-size: 3rem; /* Make it distinct */
+        color: var(--color-text-primary);
+        line-height: 1;
+    }
+
+    .skill-set__content {
+        padding-left: 0;
+    }
+
+
+    /* --- SELECTED WORKS --- */
+    .selected-works__header {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 4rem;
+    }
+
+    .selected-works__title {
+        font-size: 12vw;
+    }
+
+    .selected-works__item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 80px;
+        position: relative; /* Context for absolute positioning */
+    }
+
+    .selected-works__content {
+        width: 100%;
+    }
+
+    /* The Overlay Magic */
+    .selected-works__number {
+        position: absolute;
+        top: -30px; /* Pull it slightly above */
+        left: 10px;
+        z-index: 2;
+        font-size: 4rem; /* Smaller as requested */
+        color: white; /* Contrast against image */
+        text-shadow: 2px 2px 0px #000; /* Outline for readability */
+        pointer-events: none; /* Let clicks pass through to image */
+    }
+    
+    /* Ensure image wrapper is below the number */
+    .selected-works__image-wrapper {
+        z-index: 1;
+        border-radius: 8px;
+    }
+
+    .selected-works__info {
+        margin-top: 1rem;
+        padding-left: 5px;
+    }
+
+    /* --- BLOG SLIDER (PEEK EFFECT) --- */
+    .blog__track {
+        gap: 15px; /* Smaller gap */
+        padding-right: 20px;
+    }
+
+    .blog__card {
+        /* Card takes 85% of screen, leaving 15% to "peek" the next card */
+        width: 85vw; 
+        min-width: unset;
+    }
+
+    .blog__image-wrapper {
+        height: 250px; /* Reduced height for mobile */
+    }
+
+    /* --- FOOTER --- */
+    .contact-section {
+        padding: 60px 20px;
+        min-height: auto;
+    }
+    
+    .contact__title {
+        font-size: 10vw;
+    }
+}
+
+@media (min-width: 2000px) {
+    /* Scale the "Root" font size, this scales all 'rem' values automatically */
+    html {
+        font-size: 24px; 
+    }
+
+    /* Allow the layout to stretch wider */
+    body {
+        max-width: 2400px;
+        margin: 0 auto;
+    }
+
+    /* Fix hero positioning for massive vertical space */
+    .hero {
+        margin-top: 7vh;
+        justify-content: center;
+    }
+
+    /* Increase visual impact of images */
+    .selected-works__item, 
+    .blog__card, 
+    .hero__image {
+        transform: scale(1.1); /* Slight zoom to fill space */
+        transform-origin: center;
+    }
+    
+    /* Ensure grid gaps are proportional */
+    .what-i-do__intro-wrapper, 
+    .skill-set, 
+    .selected-works__header {
+        column-gap: 40px;
+    }
 }

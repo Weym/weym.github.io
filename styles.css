@@ -55,7 +55,8 @@ h1,
 }
 
 .muted-text {
-    opacity: 0.6
+    opacity: 0.6;
+    color: var(--color-text-primary);
 }
 
 .navbar {
@@ -921,7 +922,7 @@ h1,
 
 .sidebar__link {
     color: var(--color-text-primary);
-    transition: transform 0.2s ease;
+    transition: transform 2s ease;
     display: block;
 }
 

@@ -825,7 +825,71 @@ h1 {
     background-color: var(--color-text-primary);
 }
 
+/* --- CONTACT / FOOTER --- */
+.contact-section {
+    background-color: var(--color-text-secondary);
+    width: 100%;
+    padding: 100px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 60vh;
+}
 
+.contact__container {
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.contact__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 1.5rem 0;
+}
+
+.contact__text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: 3rem;
+}
+
+.contact__btn {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    background-color: transparent;
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+    border-radius: 4px;
+    padding: 1.25rem 1.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.contact__btn:hover {
+    background-color: rgba(100, 255, 218, 0.1);
+    transform: translateY(-3px);
+}
+
+.contact__footer-note {
+    margin-top: auto;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--color-text-primary);
+}
+
+.contact__footer-note p {
+    margin: 0;
+}
 
 
 

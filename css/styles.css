@@ -1223,3 +1223,15 @@ h1, .hero__title {
         margin-bottom: 0px;
     }
 }
+
+
+/* Users can disable animations on their operational system, this respects the user’s preference to reduce motion (for people who experience dizziness, nausea, or distraction from animations). */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .contact__btn { animation: none; }
+}

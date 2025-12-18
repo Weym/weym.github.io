@@ -7,6 +7,18 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text-primary: #d7d7cdc5;
+        --color-text-secondary: #131313;
+    }
+
+    body.dark-mode {
+        --color-text-primary: #131313;
+        --color-text-secondary: #d7d7cdc5;
+    }
+}
+
 /* --- NAVBAR CLÁSSICA (Sobrescreve estilos globais) --- */
 .blog-navbar {
     position: fixed;

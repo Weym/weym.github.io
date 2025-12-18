@@ -10,9 +10,8 @@ TODO:
 - Consider adding a third theme-color
 - Add a button for light-theme, dark-theme and one automatic that will work as I intended
     - Make the default behavior the same as the users computer or as I intended?
-- Make everything responsive
 - Double check tags, css & js
-- Make the blog read content from markdown files
+- Make the blog read content from markdown file
     - Ideally: It will have some sort of index that will work as a category
     - Will read the links
     - Will create the category and list the blog content below it
@@ -21,4 +20,8 @@ TODO:
 
 Make the README
 - Detail the steps taken
+- Maybe a case study
 - Try to build it into a case study and use it one the blog
+
+
+- When clicking outside the navigation, close it (try to account for a missclick, when the click outside is close to it)

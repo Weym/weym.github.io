@@ -7,7 +7,6 @@ Fix
 - navbar too small on big screens
 - When the screen is split horizontally with one content on the top half and another on the bottom half, the design breaks
 - In smaller screens, display the socials on top
-- add space to the about-me section
 
 TODO:
 - Make a blog:

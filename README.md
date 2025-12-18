@@ -4,70 +4,68 @@
 
 > "Transforming ideas into reality via code and design."
 
-Um portfólio digital focado em **experiência do usuário (UX)**, **narrativa visual** e **performance**. Este projeto foi desenvolvido para demonstrar habilidades em desenvolvimento Full Stack, com ênfase especial em interações criativas no Frontend sem dependência de frameworks pesados de UI.
+A digital portfolio focused on **User Experience (UX)**, **visual storytelling**, and **performance**. Inspired by bringing an editorial and journalistic aesthetic, this project was developed to demonstrate front-end development skills, with a special emphasis on creative interactions without relying on UI frameworks.
 
-🔗 **Demo:** [Link do seu site aqui]
+The entire website was built using only two colors
 
-## 🛠️ Tecnologias Utilizadas
+🔗 **Demo:** [https://weym.github.io/portfolio]
 
-O projeto foi construído utilizando a "Santíssima Trindade" da Web, explorando recursos modernos de cada linguagem:
+## 🛠️ Technologies Used
 
-* **HTML5 Semântico:** Foco em acessibilidade (a11y) e SEO.
-* **CSS3 Moderno:**
-    * Uso extensivo de **CSS Grid** e **Flexbox**.
-    * Variáveis CSS (`:root`) para consistência de design system.
-    * Funções modernas como `color-mix()` e `clamp()` para tipografia fluida.
-    * Animações de alta performance (`transform`, `opacity`).
+The project was built using the "Holy Trinity" of the Web, exploring modern features of each language:
+
+* **Semantic HTML5:** Focus on accessibility (a11y) and SEO.
+* **Modern CSS3:**
+    * Extensive use of **CSS Grid** and **Flexbox**.
+    * CSS Variables (`:root`) for design system consistency.
+    * Modern functions like `color-mix()` and `clamp()` for fluid typography.
+    * High-performance animations (`transform`, `opacity`).
 * **Vanilla JavaScript (ES6+):**
-    * `IntersectionObserver API` para mudança de temas e animações de scroll.
-    * Lógica de "Drag-to-scroll" personalizada.
-    * Manipulação de DOM leve e eficiente.
+    * `IntersectionObserver API` for theme switching and scroll animations.
+    * Custom "Drag-to-scroll" logic.
+    * Lightweight and efficient DOM manipulation.
 
-## ✨ Destaques de Funcionalidades
+## ✨ Feature Highlights
 
 ### 1. Immersive Theme Switching
-O site alterna automaticamente entre **Light Mode** e **Dark Mode** dependendo da seção que o usuário está visualizando. Isso é controlado via `data-attributes` no HTML e monitorado por um `IntersectionObserver` no JS, criando uma atmosfera imersiva para cada tipo de conteúdo.
+The site automatically switches between **Light Mode** and **Dark Mode** depending on the section the user is currently viewing to enhance the focus on visual content. This is controlled via `data-attributes` in the HTML and monitored by an `IntersectionObserver` in JS, creating an immersive atmosphere for each type of content.
 
-### 2. Menu de Navegação Circular
-Uma abordagem única para o menu mobile/desktop. Ao clicar no toggle central, o menu se expande em anéis concêntricos animados, utilizando matemática de rotação e delay de transição.
+### 2. Circular Navigation Menu
+A unique approach to the mobile/desktop menu. Upon clicking the central toggle, the menu expands into animated concentric rings, utilizing rotation mathematics and transition delays.
 
 ### 3. Sticky Stacking Cards
-Na seção "What I Do", os cards de habilidades utilizam `position: sticky`. Conforme o usuário rola a página, os cards se empilham no topo, permitindo uma leitura focada sem perder o contexto visual.
+In the "What I Do" section, skill cards use `position: sticky`. As the user scrolls down, the cards stack on top of one another, allowing for focused reading without losing the visual context.
 
-### 4. Rodapé Dinâmico
-As barras laterais (links sociais e email) possuem uma animação complexa ao chegar no fim da página: elas rotacionam 90 graus e se integram ao layout do rodapé, "fechando" a moldura do site.
+### 4. Dynamic Footer
+The sidebars (social links and email) feature a complex animation upon reaching the bottom of the page: they rotate 90 degrees and integrate into the footer layout, effectively "closing" the site's frame.
 
 ## 🎨 Design System
 
-* **Tipografia:**
-    * *Montserrat:* Títulos e impacto visual.
-    * *Poppins:* Textos de corpo e leitura.
-    * *Space Mono:* Dados técnicos, números e detalhes de código.
-* **Paleta de Cores:**
+* **Typography:**
+    * *Montserrat:* Titles and visual impact.
+    * *Poppins:* Body text and readability.
+    * *Space Mono:* Technical data, numbers, and code details.
+* **Color Palette:**
     * Dark: `#131313` (Soft Black)
     * Light: `#d0d0cd` (Warm Paper Gray)
 
-## 🚀 Como rodar localmente
+## 🚀 How to Run Locally
 
-Este é um projeto estático, não requer instalação de dependências complexas.
+This is a static project and does not require complex dependency installations.
 
-1.  Clone o repositório:
+1.  Clone the repository:
     ```bash
-    git clone [https://github.com/weym/seu-repositorio.git](https://github.com/weym/seu-repositorio.git)
+    git clone [https://github.com/weym/portfolio.git](https://github.com/weym/portfolio.git)
     ```
-2.  Navegue até a pasta:
+2.  Navigate to the folder:
     ```bash
-    cd seu-repositorio
+    cd your-repository
     ```
-3.  Abra o arquivo `index.html` no seu navegador ou use uma extensão como **Live Server** (VS Code) para simular um servidor local.
+3.  Open the `index.html` file in your browser or use an extension like **Live Server** (VS Code) to simulate a local server.
 
-## 📬 Contato
+## 📬 Contact
 
-Estou aberto a oportunidades de trabalho em todo o mundo.
+I am open to work opportunities worldwide.
 
 * **Email:** weydsonmarinho@gmail.com
-* **LinkedIn:** [Seu LinkedIn]
-* **GitHub:** [Seu GitHub]
-
----
-*Designed & Built by Weydson Marinho*
+* **GitHub:** https://github.com/weym

@@ -486,7 +486,7 @@ h1, .hero__title {
 }
 
 .skill-set__number { grid-column: 1 / 6; }
-.skill-set__content { grid-column: 7 / 13; }
+.skill-set__content { grid-column: 6 / 13; }
 
 .skill-set__description {
     font-family: var(--font-secondary);
@@ -494,7 +494,7 @@ h1, .hero__title {
     color: var(--color-text-primary);
     line-height: 1.5;
     margin-bottom: 2rem;
-    max-width: 450px;
+    max-width: 550px;
 }
 
 .skill-set__list {
@@ -642,9 +642,8 @@ h1, .hero__title {
 }
 
 .blog__title {
-    grid-column: 1 / 7;
     font-family: var(--font-primary);
-    font-size: 5vw;
+    font-size: clamp(3rem, 5vw, 12rem);
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1;
@@ -1089,7 +1088,10 @@ h1, .hero__title {
         bottom: -1%;
     }
     .contact__btn { margin-bottom: 2rem; }
+    .skill-set:nth-of-type(1) {  margin-bottom: 250px; }
+    .skill-set:nth-of-type(2) { top: 235px; margin-bottom: 200px; }
 }
+
 
 /* --- Tablet / Small Desktop --- */
 @media (max-width: 1024px) {

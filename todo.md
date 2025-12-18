@@ -1,12 +1,14 @@
+SEO
+- Criar uma imagem para colocar no `<meta property="og:image" content="...">`
+
 Tracking progress
 
 Fix
 - sticky content in different resolutions
 - section positioning and intro text are mispositioned
+- navbar too small on big screens
 
 TODO:
-- Change colors of the navbar to fit the theme
-- Normalize the brightness of the images
 - Consider adding a third theme-color
 - Add a button for light-theme, dark-theme and one automatic that will work as I intended
     - Make the default behavior the same as the users computer or as I intended?
@@ -24,4 +26,14 @@ Make the README
 - Try to build it into a case study and use it one the blog
 
 
+Navbar
 - When clicking outside the navigation, close it (try to account for a missclick, when the click outside is close to it)
+- Make the "Hamburger" menu turn into an "x" once the navbar is open
+- Make the text inside the <a> curved to better fit the lines
+
+
+Responsiveness:
+- When the screen is split horizontally with one content on the top half and another on the bottom half, the design breaks
+
+(Services)
+I bring your idea into reality by building full-stack web applications. I also <span class="muted-text">am learning to</span> work with generative AI.

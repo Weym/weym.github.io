@@ -9,6 +9,7 @@ A digital portfolio focused on **User Experience (UX)**, **visual storytelling**
 The entire website was built using only two colors
 
 🔗 **Live:** [Here](https://weym.github.io/)
+🎨 **Design System** [Here](https://weym.github.io/pages/case-study.html)
 
 ## 🛠️ Technologies Used
 

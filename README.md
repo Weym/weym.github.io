@@ -8,7 +8,7 @@ A digital portfolio focused on **User Experience (UX)**, **visual storytelling**
 
 The entire website was built using only two colors
 
-🔗 **Demo:** [https://weym.github.io/portfolio]
+🔗 **Live:** [Here](https://weym.github.io/)
 
 ## 🛠️ Technologies Used
 
@@ -55,7 +55,7 @@ This is a static project and does not require complex dependency installations.
 
 1.  Clone the repository:
     ```bash
-    git clone [https://github.com/weym/portfolio.git](https://github.com/weym/portfolio.git)
+    git clone [https://github.com/Weym/weym.github.io.git](https://github.com/Weym/weym.github.io.git) or [git@github.com:Weym/weym.github.io.git](git@github.com:Weym/weym.github.io.git)
     ```
 2.  Navigate to the folder:
     ```bash

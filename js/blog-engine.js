@@ -3,7 +3,7 @@ const INDEX_FILE = 'posts.json';
 
 const appElement = document.getElementById('app');
 
-// HELPER: Cria elementos DOM (padrão)
+// HELPER: Create DOM elements
 function createElement(tag, className, textContent) {
     const el = document.createElement(tag);
     if (className) el.className = className;
@@ -11,7 +11,7 @@ function createElement(tag, className, textContent) {
     return el;
 }
 
-// HELPER: Cria elementos SVG (Namespace obrigatório para vetores funcionarem)
+// HELPER: Create SVG elements
 function createSvgElement(tag, attrs) {
     const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
     if (attrs) {
@@ -61,7 +61,7 @@ function renderError(titleText, msgText, linkUrl, linkText) {
 }
 
 /**
- * CENA 1: Lista de Posts
+ * Post list
  */
 function renderPostList(posts) {
     appElement.replaceChildren();
@@ -83,7 +83,7 @@ function renderPostList(posts) {
     posts.forEach(post => {
         const article = createElement('article', 'blog__card');
 
-        // Imagem
+        // Image
         const imgLink = createElement('a', 'blog__image-wrapper');
         imgLink.href = `?post=${post.slug}`;
 
@@ -129,7 +129,7 @@ function renderPostList(posts) {
 }
 
 /**
- * CENA 2: Post
+ * The post itself
  */
 async function renderPost(slug, allPosts) {
     const postMeta = allPosts.find(p => p.slug === slug);
@@ -145,13 +145,13 @@ async function renderPost(slug, allPosts) {
         
         let markdownText = await mdResponse.text();
         
-        // Remove Frontmatter e Imagem duplicada (via regex na string crua)
+        // Remove Frontmatter
         markdownText = markdownText.replace(/^---[\s\S]*?---[\r\n]*/, '');
         if (postMeta.coverImage) {
             markdownText = markdownText.replace(/!\[.*?\]\(.*?\)/, '');
         }
 
-        // --- Renderização DOM ---
+        // --- DOM ---
         appElement.replaceChildren();
 
         const section = createElement('section', 'article-section');
@@ -180,19 +180,17 @@ async function renderPost(slug, allPosts) {
             container.appendChild(figure);
         }
 
-        // 3. Conteúdo (Markdown Parsing para DOM)
+        // 3. Parsing Markdown
         const articleContent = createElement('article', 'article-content');
-        // AQUI: Chamamos a nova função que retorna um DocumentFragment, não uma string HTML
         const contentFragment = parseMarkdownToDOM(markdownText);
         articleContent.appendChild(contentFragment);
         container.appendChild(articleContent);
 
-        // 4. Footer com Ícone SVG
+        // 4. Footer with SVG Icon
         const footer = createElement('div', 'article-footer');
-        const backLink = createElement('a', 'back-link', ''); // Texto será adicionado depois
+        const backLink = createElement('a', 'back-link', '');
         backLink.href = 'blog.html';
 
-        // Construção manual do SVG
         const svgIcon = createSvgElement('svg', {
             width: '24', height: '24', viewBox: '0 0 24 24',
             fill: 'none', stroke: 'currentColor', 'stroke-width': '2',

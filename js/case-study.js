@@ -11,9 +11,8 @@ function togglePaletteNamesAndHex() {
     reverseText(hexElements);
 }
 
-// Listen for the global theme change
+// Listen for the global theme change and only toggle if moving TO dark mode
 window.addEventListener('themeChanged', (e) => {
-    // Only toggle if we are moving TO dark mode (based on your original logic)
     if (e.detail.isDark) {
         togglePaletteNamesAndHex();
     }

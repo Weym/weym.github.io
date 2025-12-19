@@ -2,10 +2,10 @@
    VARIABLES & RESET
    ========================================= */
 :root {
-    --color-text-primary: #131313;
-    --color-text-secondary: #d0d0cd;
-    /* --color-text-primary: #FFFDD0;
-    --color-text-secondary: #0A1E3C; */
+    /* --color-text-primary: #131313;
+    --color-text-secondary: #d0d0cd; */
+    --color-text-primary: #FFFDD0;
+    --color-text-secondary: #0A1E3C;
     --font-primary: 'Montserrat', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
     --font-mono: 'Space Mono', monospace;
@@ -34,10 +34,10 @@ body {
 }
 
 body.dark-mode {
-    --color-text-primary: #d7d7cdc5;
-    --color-text-secondary: #131313;
-    /* --color-text-primary: #FFFDD0;
-    --color-text-secondary: #0A1E3C; */
+    /* --color-text-primary: #d7d7cdc5;
+    --color-text-secondary: #131313; */
+    --color-text-primary: #0A1E3C;
+    --color-text-secondary: #FFFDD0;
 }
 
 /* =========================================

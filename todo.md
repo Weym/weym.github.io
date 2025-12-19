@@ -18,6 +18,7 @@ TODO:
         - List featured posts on the main page
 - Modularize CSS
 - Fix index.html blog section image positioning
+- Tem conflito de CSS no blog/styles, ex: mudar as fontes iniciais não reflete nos outros
 
 Navbar
 - When clicking outside the navigation, close it (try to account for a missclick, when the click outside is close to it)

@@ -1075,8 +1075,8 @@ h1, .hero__title {
 }
 /* --- Laptop / Desktop Adjustments --- */
 @media (max-width: 1920px) {
-    .rotate-sidebar-left { bottom: -16%; }
-    .rotate-sidebar-right { bottom: -10%; }
+    .rotate-sidebar-left { bottom: 1%; }
+    .rotate-sidebar-right { bottom: -5%; }
 }
 
 @media (max-width: 1440px) {

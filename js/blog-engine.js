@@ -190,7 +190,7 @@ async function renderPost(slug, allPosts) {
         // 4. Footer com Ícone SVG
         const footer = createElement('div', 'article-footer');
         const backLink = createElement('a', 'back-link', ''); // Texto será adicionado depois
-        backLink.href = 'index.html';
+        backLink.href = 'blog.html';
 
         // Construção manual do SVG
         const svgIcon = createSvgElement('svg', {

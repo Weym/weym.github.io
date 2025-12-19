@@ -79,7 +79,7 @@
                         <div class="palette">
                             <div class="palette__item">
                                 <div class="palette__swatch palette__swatch--primary"></div>
-                                <span class="palette__name">Off-Black</span>
+                                <span class="palette__name">Dark</span>
                                 <span class="palette__hex">#131313</span>
                             </div>
 
@@ -109,15 +109,16 @@
 
                             <div class="palette__item">
                                 <div class="palette__swatch palette__swatch--secondary"></div>
-                                <span class="palette__name">Raw Stone</span>
+                                <span class="palette__name">Light</span>
                                 <span class="palette__hex">#d0d0cd</span>
                             </div>
                         </div>
 
                         <div class="tech-note">
                             <span class="tech-note__title">Code Logic //</span>
-                            <code
-                                class="tech-note__code">color-mix(in srgb, var(--stone), var(--black) <span style="font-weight:bold">20%</span>);</code>
+                            <code class="tech-note__code">
+                                color-mix(in srgb, var(--light), var(--dark) <span style="font-weight:bold">20%</span>);
+                            </code>
                             <p class="tech-note__desc">
                                 The palette is dynamic. Intermediate shades are generated live by the browser, mixing
                                 the Secondary color into the Primary color at varying percentages.
@@ -162,6 +163,8 @@
     </footer>
 
     <script src="../js/blog-script.js"></script>
+    <script src="../js/dark-mode.js"></script>
+    <script src="../js/case-study.js"></script>
 </body>
 
 </html>

@@ -474,7 +474,7 @@ h1, .hero__title {
 }
 
 .skill-set:nth-of-type(1) { top: 168px; margin-bottom: 275px; }
-.skill-set:nth-of-type(2) { top: 250px; margin-bottom: 210px; }
+.skill-set:nth-of-type(2) { top: 250px; margin-bottom: 230px; }
 .skill-set:nth-of-type(3) { top: 320px; }
 .skill-set:last-child { margin-bottom: 0; }
 
@@ -942,7 +942,7 @@ h1, .hero__title {
    FOOTER / CONTACT
    ========================================= */
 .contact-section {
-    background-color: var(--color-text-secondary);
+    background-color: color-mix(in srgb, var(--color-text-secondary), var(--color-text-primary) 5%);
     width: 100%;
     padding: 100px 20px 50px;
     display: flex;
@@ -956,14 +956,14 @@ h1, .hero__title {
 }
 
 .contact__container {
-    max-width: 600px;
+    max-width: 920px;
     width: 100%;
     margin-bottom: 5rem;
 }
 
 .contact__title {
     font-family: var(--font-primary);
-    font-size: clamp(3rem, 5vw, 12rem);
+    font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1;
@@ -1022,6 +1022,30 @@ h1, .hero__title {
    MEDIA QUERIES
    ========================================= */
 
+
+/* --- Large Screens --- */
+@media (min-width: 1921px) {
+    .hero {
+        justify-content: center;
+        margin-top: 6rem;
+    }
+    
+    .selected-works__item,
+    .blog__card,
+    .hero__image {
+        transform-origin: center;
+    }
+    
+    .what-i-do__intro-wrapper,
+    .skill-set,
+    .selected-works__header {
+        column-gap: 40px;
+    }
+
+    .rotate-sidebar-left { bottom: 6%; }
+    .rotate-sidebar-right { bottom: 0%; }
+}
+
 /* --- Ultra Large Screens --- */
 @media (min-width: 3000px) {
     html { font-size: 24px; }
@@ -1045,65 +1069,43 @@ h1, .hero__title {
 
     .skill-set:nth-of-type(1) { top: 243px; margin-bottom: 430px; }
     .skill-set:nth-of-type(2) { top: 360px; margin-bottom: 273px; }
-}
-
-/* --- Large Screens --- */
-@media (min-width: 2000px) {
-    .hero {
-        justify-content: center;
-        margin-top: 6rem;
-    }
     
-    .selected-works__item,
-    .blog__card,
-    .hero__image {
-        transform-origin: center;
-    }
-    
-    .what-i-do__intro-wrapper,
-    .skill-set,
-    .selected-works__header {
-        column-gap: 40px;
-    }
-
-    .rotate-sidebar-left { bottom: 3%; }
-    .rotate-sidebar-right { bottom: -2%; }
+    .rotate-sidebar-left { bottom: 8%; }
+    .rotate-sidebar-right { bottom: 2%; }
 }
-
 /* --- Laptop / Desktop Adjustments --- */
 @media (max-width: 1920px) {
-    .rotate-sidebar-left { bottom: 1%; }
-    .rotate-sidebar-right { bottom: -5%; }
+    .rotate-sidebar-left { bottom: -16%; }
+    .rotate-sidebar-right { bottom: -10%; }
 }
 
 @media (max-width: 1440px) {
     .rotate-sidebar-left {
         left: 49%;
-        bottom: 0;
+        bottom: 35px;
         transform: rotate(-90deg);
     }
     .rotate-sidebar-right {
         transform: rotate(90deg) scaleY(-1) scaleX(-1);
         right: 50%;
-        bottom: -1%;
+        bottom: -30px;
     }
     .contact__btn { margin-bottom: 2rem; }
-    .skill-set:nth-of-type(1) {  margin-bottom: 250px; }
-    .skill-set:nth-of-type(2) { top: 235px; margin-bottom: 200px; }
+    .skill-set__number { grid-column: 1 / 5; }
+    .skill-set__content { grid-column: 5 / 13; }
+    .skill-set:nth-of-type(1) {  margin-bottom: 245px; }
+    .skill-set:nth-of-type(2) { top: 235px; margin-bottom: 220px; }
 }
 
 
 /* --- Tablet / Small Desktop --- */
 @media (max-width: 1024px) {
-    body { margin: 0 5vw; }
+    .main { padding: 0 5vw; }
     .navbar {
         background-color: var(--color-text-secondary);
     }
     .padding-y-6 { padding: 0; }
-    .sidebar { display: none; }
-
-    
-
+    .sidebar { display: block; }
     
     .hero, .what-i-do, .selected-works, .blog, .about { margin-top: 80px; }
 
@@ -1215,8 +1217,28 @@ h1, .hero__title {
     }
 
     /* Footer */
-    .contact-section { padding: 60px 20px; min-height: auto; }
+    .contact-section { padding: 60px 20px 40px;; min-height: auto; }
     .contact__title { font-size: 10vw; }
+
+    .sidebar {
+        transition: all 0.1s;
+    }
+    .sidebar.sidebar--left {
+        position: absolute;
+        left: 47%;
+        bottom: 25px;
+    }
+
+    .sidebar-left .sidebar__link { transform: rotate(90deg); }
+    .sidebar-left .sidebar__line { display: none; }
+
+    .sidebar--right {
+        position: absolute;
+        right: 50%;
+        bottom: -52px;
+    }
+
+    .sidebar--right .sidebar__line { display: none; }
 }
 
 /* --- Mobile / Small Tablet --- */
@@ -1227,7 +1249,7 @@ h1, .hero__title {
     .contact__title { font-size: 2.2rem; }
     .contact-section { padding: 80px 20px 40px; }
     .blog__card { width: 85vw; }
-}
+    }
 
 /* --- Small Mobile --- */
 @media (max-width: 500px) {

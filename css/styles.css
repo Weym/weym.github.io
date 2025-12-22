@@ -83,7 +83,7 @@ p {
 .image-overlay img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .image-overlay::after {
@@ -697,7 +697,7 @@ h1, .hero__title {
 }
 
 .blog__card {
-    width: 30vw;
+    width: 28vw;
     min-width: 350px;
     flex-shrink: 0;
     scroll-snap-align: start;
@@ -1208,7 +1208,7 @@ h1, .hero__title {
     /* Blog */
     .blog__header { display: flex; flex-direction: column; gap: 2rem; }
     .blog__track { gap: 15px; padding-right: 20px; }
-    .blog__card { width: 85vw; min-width: 280px; }
+    .blog__card { width: 38vw; min-width: 280px; }
     .blog__image-wrapper { height: 250px; }
 
     /* About */
@@ -1248,7 +1248,7 @@ h1, .hero__title {
     .about__intro { font-size: 1.4rem; }
     .contact__title { font-size: 2.2rem; }
     .contact-section { padding: 80px 20px 40px; }
-    .blog__card { width: 85vw; }
+    .blog__card { width: 38vw; }
     }
 
 /* --- Small Mobile --- */

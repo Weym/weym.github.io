@@ -126,6 +126,7 @@ aside {
     left: 0;
     width: 100%;
     pointer-events: none; /* Navbar container não bloqueia clique, apenas itens */
+    z-index: 2;
 }
 
 .navbar__list {
@@ -1194,7 +1195,7 @@ h1, .hero__title {
         position: absolute;
         top: -30px;
         left: 10px;
-        z-index: 2;
+        z-index: 1;
         font-size: 4rem;
         color: white;
         text-shadow: 2px 2px 0px var(--color-text-primary);

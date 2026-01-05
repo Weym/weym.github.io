@@ -367,6 +367,17 @@ aside {
   height: 4px;
   background-color: var(--color-text-primary);
   border-radius: 2px;
+  transition: 0.5s;
+}
+
+.circle-menu.menu-active .center-circle .line:first-child {
+  transform: rotate(45deg);
+}
+
+.circle-menu.menu-active .center-circle .line:last-child {
+  transform: rotate(-45deg);
+  margin-left: 0px;
+  margin-top: -10px;
 }
 
 /* =========================================

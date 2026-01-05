@@ -6,8 +6,6 @@ Fix
 
 - When the screen is split horizontally (example: two screens on the same monitor, one on top of the other instead of side by side) the design breaks
 - In smaller screens, display the socials on top
-- On Blog and posts fix "home" appearing on top of stuff
-- Link to blogs on index.html
 
 TODO:
 
